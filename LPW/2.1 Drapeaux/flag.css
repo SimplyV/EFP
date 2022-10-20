@@ -1,0 +1,78 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+html, body{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flags{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 55em;
+  height: 50%;
+  gap: 30px;
+}
+.flags .flag{
+  min-height: 300px;
+  width: 15em;
+  height: 25em;
+  display: flex;
+}
+.flags .flag .pole{
+  height: 100%;
+  width: 0.5em;
+  background-color: #c0c0c0;
+  border-radius: 20px 0px 20px 20px;
+}
+.flags .flag .stripes{
+  display: grid;
+  width: 80%;
+  height: 25%;
+  box-shadow: 0px 0px 2em 0px rgba(133,133,133,0.75); 
+}
+.flags .flag .stripes.horizontal{
+  grid-template-columns: repeat(3, 1fr);
+}
+.flags .flag .stripes.vertical{
+  grid-template-rows: repeat(3, 1fr);
+}
+
+
+.flags .flag.bel .stripes .start{
+  background-color: #000000;
+}
+.flags .flag.bel .stripes .middle{
+  background-color: #fddb20;
+}
+.flags .flag.bel .stripes .last{
+  background-color: #f02f3e;
+}
+
+
+.flags .flag.nld .stripes .start{
+  background-color: #b01523;
+}
+.flags .flag.nld .stripes .middle{
+  background-color: #ffffff;
+}
+.flags .flag.nld .stripes .last{
+  background-color: #1b448c;
+}
+
+
+.flags .flag.lux .stripes .start{
+  background-color: #ee2436;
+}
+.flags .flag.lux .stripes .middle{
+  background-color: #ffffff;
+}
+.flags .flag.lux .stripes .last{
+  background-color: #00a2df;
+}
