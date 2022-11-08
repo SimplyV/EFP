@@ -11,4 +11,29 @@ html, body{
 }
 .container{
   font-size: 10em;
+  text-decoration: none;
+  color: purple;
+}
+.container-analogue{
+  position: relative;
+  transform: rotate(-90deg);
+}
+.aiguille{
+
+  border-radius: 5px;
+  height: 10px;
+  transform-origin: left;
+  position: absolute;
+}
+.aiguille.seconde{
+  width: 250px;
+  background-color: purple;
+}
+.aiguille.minute{
+  width: 200px;
+  background-color: green;
+}
+.aiguille.heure{
+  width: 150px;
+  background-color: red;
 }
