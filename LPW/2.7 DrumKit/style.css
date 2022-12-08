@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+html, body{
+  width: 100%;
+  height: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  background: #3D3D3D;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+main .drumkit-container h1{
+  color: #fff;
+  text-align: center;
+}
+main .drumkit-container #drum-holder{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+main .drumkit-container #drum-holder .drum-sound{
+  background: #878686;
+  border-radius: 5px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  opacity: 1;
+}
+main .drumkit-container #drum-holder .drum-sound:hover{
+  opacity: .8;
+}
+
+main .drumkit-container #drum-holder .drum-sound h3{
+  text-transform: uppercase;
+}
+main .drumkit-container #drum-holder .drum-sound span{
+  margin-top: 10px;
+}
+main .drumkit-container #drum-holder .drum-sound.playing{
+  background: #fff;
+}
+@media(min-width: 768px){
+  main .drumkit-container #drum-holder{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media(min-width: 960px){
+  main .drumkit-container #drum-holder{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
