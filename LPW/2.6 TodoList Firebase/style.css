@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');*{
+  margin: 0;
+  box-sizing: border-box;
+}
+input, button{
+  font-family: 'Ubuntu', sans-serif;
+}
+html, body{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+.tasks{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin-top: 20px;
+}
+.tasks .task{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  background: #F2F2F2;
+  opacity: 1;
+  transition: opacity .5s ease-in-out;
+}
+.tasks .task.completed{
+  opacity: 0.7;
+}
+.tasks .task.completed .task-value{
+  text-decoration: line-through;
+}
+.form{
+  width: 500px;
+  display: flex;
+  margin-top: 100px;
+}
+.form input{
+  display: flex;
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 7px 0px 0px 7px;
+  border: 1px solid #dadada;
+  outline: none;
+}
+.form input:focus{
+  border-color: dodgerblue;
+}
+.form button{
+  background-color: dodgerblue;
+  color: #fff;
+  border-radius: 0px 7px 7px 0px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.tasks .task .task-header{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.tasks .task .task-header input[type="checkbox"]{
+  accent-color: dodgerblue;
+}
+.tasks .task .task-header .task-edit-container{
+  display: none;
+}
+.tasks .task .task-header .task-edit-container.open{
+  display: flex;
+  align-items: center;
+}
+.tasks .task .task-header .task-edit-container input {
+  display: flex;
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 7px 0px 0px 7px;
+  border: 1px solid #dadada;
+  outline: none;
+}
+.tasks .task .task-header .task-edit-container input:focus{
+  border-color: dodgerblue;
+}
+.tasks .task .task-header .task-edit-container button{cursor: pointer;}
+.tasks .task .task-header .task-edit-container .remove-edit-btn {
+  background-color: #F22929;
+  color: #fff;
+  border: none;
+  padding: 11px;
+}
+.tasks .task .task-header .task-edit-container .validate-edit-btn {
+  background-color: #24da3c;
+  color: #fff;
+  border: none;
+  padding: 11px;
+  border-radius: 0px 7px 7px 0px;
+}
+.tasks .task .task-actions{
+  display: flex;
+  gap: 10px;
+}
+.tasks .task .task-actions .edit-btn,
+.tasks .task .task-actions .remove-btn{
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 7px;
+  transition: .3s ease-in-out;
+}
+.tasks .task .task-actions .edit-btn:hover,
+.tasks .task .task-actions .remove-btn:hover{
+  background-color: #dadada;
+}
+.tasks .task .task-actions .edit-btn i,
+.tasks .task .task-actions .remove-btn i{
+  font-size: 16px;
+}
+.tasks .task .task-actions .remove-btn i{
+  color: #F22929;
+}
+ .container {
+  display: block;
+  position: relative;
+  padding-left: 15px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 20px;
+  margin-top: -5px;
+}
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #ccc;
+  border-radius: 100px;
+}
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}   
