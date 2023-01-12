@@ -109,10 +109,6 @@ h1{
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
-/* .modal .modal-content .modal-content-title{
-  font-size: 1.5rem;
-  font-weight: bold;
-} */
 .modal .modal-content div{
   font-size: 1.5rem;
   font-weight: bold;

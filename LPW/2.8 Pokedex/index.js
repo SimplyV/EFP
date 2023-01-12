@@ -160,7 +160,6 @@ function displayModal(name){
         }
       }
       type.forEach((element) => {
-        // console.log(element.type.name);
         let li = document.createElement('li');
         li.innerHTML = element.type.name;
         modalType.appendChild(li);
