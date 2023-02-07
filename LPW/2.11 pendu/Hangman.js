@@ -91,6 +91,16 @@ class Hangman{
       if(!lettersInputed.includes(val)){
         lettersInputed.push(val)
       }
+
+      // let wordArr = this.string.split('');
+      // wordArr.map((el, index) => {
+      //   if(){
+      // }
+      // })
+
+
+
+
       console.log(lettersInputed);
     
       setTimeout(() => {
