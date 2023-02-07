@@ -95,6 +95,7 @@ class Hangman{
       // let wordArr = this.string.split('');
       // wordArr.map((el, index) => {
       //   if(){
+      //   positions.push(index);
       // }
       // })
 
