@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <script src="adressAutoComplete.js" defer></script>
+  <title> Autocomplete </title>
+</head>
+  <body>
+
+    <form class="form-container">
+      <div>
+        <label for="identity"> Identité </label>
+        <input type="text" id="identity">
+      </div>
+      <div>
+        <label for="street"> Rue </label>
+        <input type="text" id="name">
+      </div>
+      <div>
+        <label for="number"> Numéro </label>
+        <input type="number" id="number">
+      </div>
+      <div>
+        <label for="postal"> Code Postal </label>
+        <input type="number" class="autocomplete toComplete" id="zip">
+        <div class="zipList list"></div>
+      </div>
+      <div>
+        <label for="city"> Ville </label>
+        <input type="text" class="autocomplete toComplete" id="city">
+        <div class="cityList list"></div>
+      </div>
+      <div>
+        <label for="commune"> Commune </label>
+        <input type="text" class="toComplete" id="commune">
+      </div>
+      <div>
+        <label for="province"> Province </label>
+        <input type="text" class="toComplete" id="province">
+      </div>
+    </form>
+
+  </body>
+</html>

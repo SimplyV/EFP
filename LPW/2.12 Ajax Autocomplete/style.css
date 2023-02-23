@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Tilt Warp', cursive;
+}
+.form-container{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+.form-container div{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form-container div input{
+  border: 1px solid #DADADA;
+  padding: 10px 15px;
+  border-radius: 7px;
+  margin-bottom: 5px;
+  font-family: 'Tilt Warp', cursive;
+}
+.form-container label{
+  margin-bottom: 5px;
+}
+.list{
+  max-height: 300px;
+  flex-direction: column;
+  overflow-x: hidden;
+  border-radius: 5px;
+  gap: 5px !important;
+  display: none !important;
+}
+.list.active{
+  display: flex !important;
+}
+.list div{
+  display: flex;
+  padding: 10px;
+  flex-direction: row;
+  gap: 20px;
+  background: #dadada;
+}
