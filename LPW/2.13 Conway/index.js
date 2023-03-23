@@ -1,6 +1,9 @@
 let width = 10;
 let height = 10;
 let cellsArr = [];
+let matrixArr = [];
+let neighborArr = [];
+
 
 const makeBoard = (width, height) => {
 
@@ -11,7 +14,7 @@ const makeBoard = (width, height) => {
   for(let i = 0; i < height; i++){
     cellsArr[i]=[];
     for(let j = 0; j < width; j++){
-      cellsArr[i].push(makeCell(count, container)); 
+      cellsArr[i].push(makeCell(count, container));
       count++;
     }
   }
@@ -21,12 +24,76 @@ const makeBoard = (width, height) => {
   document.body.appendChild(container);
 }
 
+const makeArr = () => {
+  var count = 0;
+  cellsArr.forEach((el) => {
+    matrixArr[count] = [];
+    el.forEach((subel) => {
+      matrixArr[count].push(isDeadOrAlive(subel));
+    });
+    count++;
+  });
+}
+
+const outOfBound = (i, j) => {
+  return i < 0 || j < 0
+}
+
+
+const countNeighbor = (i, j) => {
+  var numNeighbor = 0;
+
+  for(let row = i-1; row < i+1; row++){
+
+  }
+
+  if((matrixArr[i][j - 1]) === 1){
+    numNeighbor++;
+  }
+   if(matrixArr[i][j+1] === 1){
+    numNeighbor++;
+  }
+   if(matrixArr[i-1][j] === 1){
+    numNeighbor++;
+  }
+   if(matrixArr[i+1][j] === 1){
+    numNeighbor++;
+  }
+   if(matrixArr[i-1][j-1] === 1){
+    numNeighbor++;
+  }
+   if(matrixArr[i-1][j+1] === 1){
+    numNeighbor++;
+  }
+   if(matrixArr[i+1][j-1] === 1){
+    numNeighbor++;
+  }
+   if(matrixArr[i+1][j+1] === 1){
+    numNeighbor++;
+  }
+  return numNeighbor;
+}
+
+const NextGen = () => {
+  matrixArr.map((rows) => {
+    rows.map((cols) => {
+      console.log(countNeighbor(rows, cols));
+    });
+  });
+}
+
+const isDeadOrAlive = (element) => {
+  if(!element.classList.contains('alive')){
+    return 0
+  }
+  return 1;
+}
+
 const makeCell = (count, container) => {
   let cell = document.createElement('div');
   cell.classList.add('cell');
   cell.setAttribute('data-position', count);
   cell.addEventListener('click', handleCellClick);
-  // cellsArr.push(cell);
   container.appendChild(cell);
   return cell;
 }
@@ -155,33 +222,21 @@ const makeInputs = () => {
   startButton.classList.add('start-btn');
   startButton.addEventListener('click', startGame);
   containerInputs.appendChild(startButton)
-
   document.body.appendChild(containerInputs);
-
 }
 
-const makeMulti = () => {
-  let statusArr = [];
-  cellsArr.forEach((cl) => {
-    if(cl.classList.contains('alive')){
-      statusArr.push([1, cl.getAttribute('data-position')]);
-    } else{
-      statusArr.push([   cl.getAttribute('data-position')]);
-    }
-  })
-  // logArr(statusArr);
-  return statusArr;
-}
+
+
 
 const logArr = (arr) => {
   console.table(arr);
   console.log(arr);
 }
 
-
 const startGame = () => {
-  // makeMulti();
-  logArr(cellsArr);
+  makeArr();
+  console.log(countNeighbor(1, 4));
+  NextGen();
 }
  
 const makeGameBoard = () => {
